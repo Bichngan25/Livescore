@@ -1,0 +1,29 @@
+.footer {
+  text-align: center;
+  &__desc span {
+    color: #575d68;
+    font-size: 14px;
+    display: block;
+    font-weight: 400;
+    line-height: calc(24 / 14);
+  }
+  &__social {
+    list-style: none;
+    padding: 20px 0 16px 0;
+    @include flexbox(
+      (
+        justify-content: center,
+      )
+    );
+    li a {
+      padding: 4px;
+      display: inline-block;
+      img {
+        transition: opacity 0.2s ease;
+      }
+      &:hover img {
+        opacity: 0.8;
+      }
+    }
+  }
+}

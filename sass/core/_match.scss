@@ -1,0 +1,144 @@
+// Match
+.match {
+  --pd-item: 15px 12px;
+  margin-top: 20px;
+  &__container {
+    @include flexbox(
+      (
+        justify-content: space-between,
+        align-items: flex-start,
+      )
+    );
+    gap: 20px;
+  }
+  &-top {
+    padding: var(--pd-item);
+    @include bgc(#f3f5f7);
+    @include flexbox(
+      (
+        align-items: center,
+      )
+    );
+    gap: 8px;
+    b {
+      text-transform: capitalize;
+    }
+  }
+  &-text {
+    color: #29292c;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: calc(20 / 14);
+    &--bold {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+  &-left {
+    max-width: 262px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &-sidebar {
+    border-radius: 12px 12px 0 0;
+    border: 1px solid #d5dfe9;
+    overflow: hidden;
+    &__list {
+      list-style: none;
+      li {
+        cursor: pointer;
+        @include bgc($light-color);
+        @include flexbox(
+          (
+            align-items: center,
+          )
+        );
+        gap: 12px;
+        padding: var(--pd-item);
+        border-top: 1px solid #d5dfe9;
+        transition: background 0.2s ease;
+        img {
+          max-width: 24px;
+          display: block;
+        }
+        &:hover {
+          @include bgc(#eaeef1);
+        }
+      }
+    }
+  }
+  &-right {
+    max-width: 826px;
+    width: 100%;
+  }
+  &-tables {
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #d5dfe9;
+    border-top: transparent;
+    background: #fff;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  &-row {
+    padding: 12px;
+    display: grid;
+    align-items: center;
+    gap: 30px;
+    grid-template-columns: 2fr 1.3fr 1fr;
+    &:not(:last-child) {
+      border-bottom: 1px solid #d5dfe9;
+    }
+  }
+  &-column {
+    &__col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__detail {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    &__club {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      &-name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+    &__btn {
+      color: $light-color;
+      font-size: 12px;
+      font-style: normal;
+      text-decoration: none;
+      padding: 5px 12px;
+      font-weight: 700;
+      line-height: calc(18 / 12);
+      border-radius: 100rem;
+      @include bgc($primary-color);
+      transition: opacity 0.2s ease;
+      float: right;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  &-time {
+    display: flex;
+    flex-shrink: 0;
+    gap: 6px;
+    b {
+      color: #ff8a00;
+    }
+    span {
+      color: #06f;
+    }
+  }
+}

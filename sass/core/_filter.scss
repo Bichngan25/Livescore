@@ -1,0 +1,96 @@
+// filter
+.filter {
+  --rounder-btn: 6px;
+  &__container {
+    gap: 40px;
+  }
+  &__container,
+  &-tab,
+  &-tab__item {
+    @include flexbox(
+      (
+        align-items: center,
+        justify-content: space-between,
+      )
+    );
+  }
+  &-tab {
+    gap: 12px;
+    &__item {
+      gap: 9px;
+      border-radius: var(--rounder-btn);
+      color: var(--text-primary);
+      @include bgc($light-color);
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: calc(16 / 12);
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+      &.active {
+        @include bgc($primary-color);
+        color: $light-color;
+      }
+      b {
+        font-weight: 700;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  &-dropdown {
+    max-width: 200px;
+    width: 100%;
+    @include bgc($light-color);
+    border-radius: var(--rounder-btn);
+    position: relative;
+    &__selected {
+      @include flexbox(
+        (
+          justify-content: space-between,
+          align-items: center,
+        )
+      );
+      padding: 8px 12px;
+      cursor: pointer;
+      user-select: none;
+      span {
+        color: var(--text-primary);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: calc(16 / 12);
+        text-transform: uppercase;
+      }
+    }
+    &__list {
+      @include bgc($light-color);
+      list-style: none;
+      @include flexbox(
+        (
+          flex-direction: column,
+        )
+      );
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      width: 100%;
+      border-radius: var(--rounder-btn);
+      overflow: hidden;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      li {
+        font-size: 12px;
+        color: var(--text-primary);
+        padding: 8px 12px;
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        &:hover {
+          @include bgc($primary-color);
+          color: $light-color;
+        }
+      }
+    }
+  }
+}
